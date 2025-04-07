@@ -1,0 +1,359 @@
+/* properties will be applied at every place */
+*{
+    margin: 0;
+    border: border-box;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Properties will be applied at header only */
+.header{
+    block-size: 54;
+    inline-size: 100%;
+    margin: 0;
+    padding: 0px 24px;
+    display: flex;
+    align-items: center;
+
+}
+
+.header_1{
+    height : 54px;
+    padding: 0px 24px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+
+    /* To fix Nav Bar */
+    position: fixed;
+    inset-block-start: 0;  /* Top */
+    inset-inline-start: 0;  /* Left */
+    inline-size: 100%;    /* Width */
+    z-index: 1000;
+}
+
+/* Property will be applied to logo only */
+.nav-two{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    inline-size: 60%;
+    font-weight: 600;
+    color: #484848;
+
+}
+
+.logo{
+    block-size: 27px;  /**height **/
+    inline-size: 136px; /**width **/ 
+    background-image: url(logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+.border{
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.border:hover{
+    border-block-end: 3px solid #00857A;
+}
+
+/** Third Nav Bar **/
+
+.nav-third{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    inline-size: 40%;
+    block-size: 27px;
+    cursor: pointer;
+}
+
+.nav-input{
+    inline-size: 190px; /* Width */
+    block-size: 43px;  /* height */
+    align-items: center;
+    border: 2px #c0b3b3 visible;
+    border-radius: 5px;
+}
+
+.input-line{
+    inline-size: 150px;
+    block-size: 40px;
+    border : none;
+}
+
+.hero-image {
+    background-image: url(hero_image_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    block-size: 545px; /* Reduced height by 55px */
+    inline-size: 100%;
+
+    /* Shift the background image up */
+    background-position: center -55px;  
+
+    /* Make it start from the navbar */
+    position: relative; /* Keeps it in the document flow to prevent overlap */
+    margin-block-start: 54px; /* Pushes the section below the navbar */
+
+    /* 
+    🔍 Understanding inset-inline-start and inset-block-start
+    These properties are part of Logical Properties in CSS, which allow layouts to be more flexible across different writing directions (like left-to-right and right-to-left languages).
+
+    🔹 inset-inline-start: 0; → Positions the element at the left edge of the screen.
+    🔹 inset-block-start: 54px; → Moves the element down from the top by 54px (same as navbar height).
+
+    💡 Think of them as:
+
+    inline → Horizontal direction (Left/Right)
+    block → Vertical direction (Top/Bottom)
+    */
+}
+
+
+/* 2nd Main Class */
+.search-hero {
+    position: absolute;
+    inline-size: 55%;
+    inset-block-start: 85%; /* Moves it down */
+    inset-inline-start: 50%; /* Moves it right */
+    transform: translate(-50%, -50%); /* Centers it properly */
+    border-radius: 8px;
+    background-color: #ffffff;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    block-size: 44px;
+    border: none;
+}
+
+/** PLace of placed H2 Heading Find the Car**/
+.text-image{
+    color: white;
+    text-align: center;
+    margin-block-end: 13px;
+    position: absolute;
+    inset-block-end: 20%; /* Moves it up from the bottom */
+    inset-inline-start: 50%;
+    transform: translateX(-50%); /* Centering horizontally */
+    font-size: 24px;
+    border: none;
+}
+
+.select-search{
+    inline-size: 74px;
+    block-size: 44px;
+    border: none;
+    text-align: start;  /** Similar to left **/
+    font-size: 1.1rem;
+    background-color: #E1E1E1;
+    border-radius: 3px;
+}
+
+.search-hero_2{
+    border: none;
+    inline-size: 69%;
+    block-size: 38px;
+    font-size: 1.1rem;
+}
+
+.search-button{
+    border: none;
+    block-size: 38px;
+    inline-size: 129px;
+    background-color: #E03012;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.select-search:hover, 
+.search-button:hover {
+    cursor: pointer;  
+}
+
+
+/** Navigation Bar 2 under Search Option **/
+.nav-bar-2-main {
+    position: absolute;       /* Same positioning method as .search-hero */
+    inline-size: 100%;         /* Matches search bar width */
+    inset-block-start: 130%;   /* Moves it below search-hero */
+    inset-inline-start: 50%;  /* Centers it */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    display: flex;
+    justify-content: center;  /* Centers content horizontally */
+    align-items: center;      /* Aligns items vertically */
+    border-radius: 4px;
+}
+
+/* Flexbox container for the paragraph text */
+.nav-bar-2 {
+    display: flex;                
+    justify-content: space-between; /* Pushes text to both ends */
+    align-items: center;           
+    flex-wrap: nowrap;              
+    inline-size: 100%;        /* Takes full width of .nav-bar-2-main */
+    color: white;
+}
+
+/* Styling for paragraphs inside nav-bar-2 */
+.nav-bar-2 p a {
+    margin: 0;                   
+    white-space: nowrap;         /* Ensures text stays in one line */
+    text-decoration: none;
+    font-size: 0.8rem;             /* Adjust text size as needed */
+}
+
+.nav-bar-2 a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/** Strating of Sectioning**/
+.section{
+    margin: 0px 7.5%; 
+    inline-size: 85%;
+}
+
+.h-2{
+    padding: 8px 0px;
+    inline-size: 100%;
+    color: #333333;
+    block-size: 26.67px;
+    align-items: center;
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+
+.section-list{
+    display: flex;
+    block-size: 51.33px;
+    inline-size: 100%;
+    align-items: center;
+    padding-inline-start: 0%;
+    color: #484848;
+}
+
+.section-list:hover{
+    cursor: pointer;
+}
+
+.span-section-1{
+    padding: 16px 12px 12px 0px;
+}
+.span-section-2{
+    padding: 16px 12px 12px 12px ;
+}
+.span-section-3{
+    padding: 16px 0px 12px 0px;
+}
+
+.section-list:active{
+    border-block-end: #00857A;
+}
+
+
+/** Slides-view **/
+.parent{
+    inline-size: 100%;  /** Length of Parent div which keeps child image intact **/
+    block-size: 300px;
+    max-inline-size: 1200px;  /** Similar to max width **/
+    padding-block-start: 16px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/** Parent of Boxes but child of parent class  **/
+
+.child{
+    border-radius: 7%;
+    border: 1px solid rgb(218, 222, 223);
+    inline-size: 32%;
+    box-sizing: border-box;
+    block-size: auto;
+    min-block-size: 300px;
+}
+
+.child img{
+    block-size: 42%;
+    border-start-end-radius: 7%;
+    border-start-start-radius: 7%;
+    inline-size: 100%
+    
+}
+
+.manufacturer{
+    color:#333333;
+    font-size: 1rem;
+    font-weight: 450;
+}
+
+.money{
+    font-size: 1rem ;
+    font-weight: 600;
+}
+
+.money-span{
+    color: #333333;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.avg-price{
+    color: #333333;
+    font-size: 0.8rem;
+}
+
+.button-child{
+    color: #00857A;
+    block-size: 32px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    inline-size: 172px;
+    border-radius: 10%;
+    padding: 0px 20px;
+    margin: 12px 0px 0px;
+    text-decoration: none;
+    border-color: #00857A;
+    background-color: #ffffff;
+}
+
+.lower-body{
+    block-size: 50%;
+    text-align: start;
+    padding: 16px 12px 15px;
+    border-end-end-radius: 7%;
+    border-end-start-radius: 7%;
+    background-color: #F9F9F9;
+}
+
+/** Brand section **/
+.brand-section{
+    margin: 0px 7.5%;
+    padding: 10px 0px;
+    inline-size: 100%;  /** Length of Parent div which keeps child image intact **/
+    max-inline-size: 1200px;  /** Similar to max width **/
+    padding-block-start: 16px;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    position: relative;
+}
+
+.brand-header{
+    padding: 12px 0px;
+}
+
+.h2-brand{
+    color: #333333;
+}
